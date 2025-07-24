@@ -1,9 +1,10 @@
-import './App.css';
+import "./App.css";
+import Todos from "./components/Todos";
 
 function App() {
   return (
     <div className="App">
-      test
+      <Todos items={["Learn React", "Learn TypeScript"]} />
     </div>
   );
 }
