@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import classes from "./NewTodo.module.css";
 
 export default function NewTodo({
   onAddTodo,
@@ -22,7 +23,7 @@ export default function NewTodo({
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.form}>
       <label htmlFor="text">Todo text</label>
       <input type="text" id="text" ref={todoTextInput} />
       <button>Add Todo</button>

@@ -1,6 +1,6 @@
 import Todo from "../models/todo";
-
 import TodoItem from "./TodoItem";
+import classes from "./Todos.module.css";
 
 // const Todos: React.FC<{ items: string[] }> = (props) => {
 //   return (
@@ -15,7 +15,7 @@ import TodoItem from "./TodoItem";
 // export default Todos;
 export default function Todos({ items }: { items: Todo[] }) {
   return (
-    <ul>
+    <ul className={classes.todos}>
       {items.map((item) => (
         <TodoItem key={item.id} text={item.text} />
       ))}
