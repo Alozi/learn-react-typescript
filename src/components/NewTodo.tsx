@@ -1,6 +1,10 @@
 import { useRef } from "react";
 
-export default function NewTodo() {
+export default function NewTodo({
+  onAddTodo,
+}: {
+  onAddTodo: (text: string) => void;
+}) {
   const todoTextInput = useRef<HTMLInputElement>(null);
 
   function submitHandler(event: React.FormEvent) {
@@ -13,6 +17,8 @@ export default function NewTodo() {
       //throw an error
       return;
     }
+
+    onAddTodo(enteredText);
   }
 
   return (
