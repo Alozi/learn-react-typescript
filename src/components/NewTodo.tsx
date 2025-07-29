@@ -12,7 +12,6 @@ export default function NewTodo({
     event.preventDefault();
 
     const enteredText = todoTextInput.current!.value;
-    console.log(enteredText);
 
     if (enteredText.trim().length === 0) {
       //throw an error

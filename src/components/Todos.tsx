@@ -13,11 +13,22 @@ import classes from "./Todos.module.css";
 // };
 
 // export default Todos;
-export default function Todos({ items }: { items: Todo[] }) {
+export default function Todos({
+  items,
+  onRemoveTodo,
+}: {
+  items: Todo[];
+  onRemoveTodo: (id: string) => void;
+}) {
   return (
     <ul className={classes.todos}>
       {items.map((item) => (
-        <TodoItem key={item.id} text={item.text} />
+        <TodoItem
+          key={item.id}
+          text={item.text}
+          id={item.id}
+          onRemoveTodo={onRemoveTodo}
+        />
       ))}
     </ul>
   );
